@@ -34,3 +34,8 @@ The designs were created to the following widths:
 
 - Family: [Rubik](https://fonts.google.com/specimen/Rubik)
 - Weights: 400, 500, 700
+
+Modelo:
+https://whimsical-entremet-046e1d.netlify.app/
+
+https://github.com/Fl003/fem-interactive-comments-section
