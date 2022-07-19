@@ -7,3 +7,165 @@
     font-family: 'Rubik', sans-serif;
     text-decoration: none;
 }
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background: $corFundo;
+}
+
+.page {
+    max-width: 800px;
+    margin-bottom: 40px;
+    position: relative;
+    border: solid 1px red;
+}
+
+.wrapper-send-comment {
+    // position: absolute;
+    // bottom: 40px;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0px;
+    display: grid;
+    grid-template-columns: 40px 1fr 90px;
+    align-items: flex-start;
+    gap: 20px;
+
+    .avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #ddd;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .set-comment {
+        background-color: none;
+        border: solid 2px rgb(247, 247, 247);
+        border-radius: 8px;
+        resize: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        outline: none;
+
+        &:focus {
+            border: solid 2px rgb(87, 86, 178);
+        }
+
+        &::placeholder {
+            font-size: 14px;
+        }
+    }
+
+    .btn-responder {
+        width: 90px;
+        height: 40px;
+        background-color: $corRoxo;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        text-transform: uppercase;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 50%;
+        }
+    }
+}
+
+.wrapper-comment {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+
+    .controler {
+        width: 80px;
+        height: 80px;
+        background-color: $corFundo;
+        border-radius: 5px;
+        display: grid;
+        grid-template-rows: auto;
+        justify-content: center;
+        align-items: center;
+        color: $corRoxo;
+        font-size: 14px;
+        font-weight: 500;
+
+        
+        .btn-controler {
+            background: none;
+            border: none;
+            cursor: pointer;
+
+            &:hover > img {
+                filter: invert(75%);
+            }
+        }
+    }
+
+    .content-comment {
+        // border: solid 1px red;
+        
+        .topo {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+    
+            .dados-user {
+                display: flex;
+                gap: 15px;
+                justify-content: space-around;
+                align-items: center;
+                font-size: 15px;
+
+                .avatar {
+                    width: 30px;
+                    height: 30px;
+                    font-size: small;
+                    border-radius: 50%;
+                    background-color: #ddd;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+
+            .btn-responder {
+                background: none;
+                border: none;
+                color: $corRoxo;
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                cursor: pointer;
+
+                & > img {
+                    height: 12px;
+                }
+
+                &:hover {
+                    opacity: 50%;
+                }
+            }
+        }
+
+        .comment {
+            font-size: 14px;
+            color: $corTexto;
+        }
+    }
+
+}
+
+.wrapper-reply-comment {
+    // display: none;
+}
