@@ -19,22 +19,47 @@ body {
 
 .page {
     max-width: 800px;
-    margin-bottom: 40px;
+    width: 800px;
+    height: 100vh;
     position: relative;
-    border: solid 1px red;
+
+    .wrapper-box-bottom {
+        position: fixed;
+        max-width: 800px;
+        min-width: 400px;
+        width: 100%;
+        padding: 10px;
+        height: 200px;
+        bottom: 0px;
+        background-color: $corFundo;
+    }
+
+    .wrapper-box-top {
+        position: fixed;
+        padding: 20px 10px;
+        max-width: 800px;
+        min-width: 400px;
+        width: 100%;
+        height: calc(100vh - 200px);
+        top: 0;
+        overflow-y: scroll;
+
+    }
 }
 
 .wrapper-send-comment {
-    // position: absolute;
-    // bottom: 40px;
     background-color: #fff;
     border-radius: 8px;
     padding: 20px;
-    margin: 20px 0px;
-    display: grid;
+    // display: grid;
+    display: none;
     grid-template-columns: 40px 1fr 90px;
     align-items: flex-start;
     gap: 20px;
+
+    &.fixo, &.active {
+        display: grid;
+    }
 
     .avatar {
         width: 40px;
@@ -81,91 +106,152 @@ body {
 }
 
 .wrapper-comment {
-    background-color: #fff;
-    border-radius: 8px;
-    padding: 20px;
-    display: flex;
-    gap: 20px;
-
-    .controler {
-        width: 80px;
-        height: 80px;
-        background-color: $corFundo;
-        border-radius: 5px;
-        display: grid;
-        grid-template-rows: auto;
-        justify-content: center;
-        align-items: center;
-        color: $corRoxo;
-        font-size: 14px;
-        font-weight: 500;
-
-        
-        .btn-controler {
-            background: none;
-            border: none;
-            cursor: pointer;
-
-            &:hover > img {
-                filter: invert(75%);
-            }
-        }
-    }
-
-    .content-comment {
-        // border: solid 1px red;
-        
-        .topo {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 15px;
     
-            .dados-user {
-                display: flex;
-                gap: 15px;
-                justify-content: space-around;
-                align-items: center;
-                font-size: 15px;
+    .main-comment {
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 15px 0px;
+        display: flex;
+        gap: 20px;
 
-                .avatar {
-                    width: 30px;
-                    height: 30px;
-                    font-size: small;
-                    border-radius: 50%;
-                    background-color: #ddd;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                }
+        &.user-atual {
+            .you {
+                display: inline-flex !important;
+            }
+
+            .btn-deletar, .btn-editar {
+                display: flex !important;
             }
 
             .btn-responder {
+                display: none !important;
+            }
+        }
+    
+        .controler {
+            min-width: 35px;
+            height: 80px;
+            background-color: $corFundo;
+            border-radius: 5px;
+            display: grid;
+            grid-template-rows: auto;
+            justify-content: center;
+            align-items: center;
+            color: $corRoxo;
+            font-size: 14px;
+            font-weight: 500;
+    
+            
+            .btn-controler {
                 background: none;
                 border: none;
-                color: $corRoxo;
-                display: flex;
-                align-items: center;
-                gap: 5px;
                 cursor: pointer;
-
-                & > img {
-                    height: 12px;
-                }
-
-                &:hover {
-                    opacity: 50%;
+    
+                &:hover > img {
+                    filter: invert(75%);
                 }
             }
         }
+    
+        .content-comment {
+            // border: solid 1px red;
+            
+            .topo {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 15px;
+        
+                .dados-user {
+                    display: flex;
+                    gap: 15px;
+                    justify-content: space-around;
+                    align-items: center;
+                    font-size: 15px;
+    
+                    .avatar {
+                        width: 30px;
+                        height: 30px;
+                        font-size: small;
+                        border-radius: 50%;
+                        background-color: #ddd;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+    
+                    .nome {
+                        font-weight: bold;
+                    }
+    
+                    .you {
+                        background-color: $corRoxo;
+                        height: 50%;
+                        font-size: 10px;
+                        padding: 2px 5px;
+                        color: #fff;
+                        display: none;
+                        align-items: center;
+                    }
+    
+                    .data {
+                        color: $corTexto;
+                    }
+                }
+    
+                .wrapper-botoes {
+                    display: flex;
+                    gap: 20px;
+    
+                    .btn-topo {
+                        background: none;
+                        border: none;
+                        color: $corRoxo;
+                        display: flex;
+                        align-items: center;
+                        gap: 5px;
+                        cursor: pointer;
+        
+                        & > img {
+                            height: 12px;
+                        }
+        
+                        &:hover {
+                            opacity: 50%;
+                        }
+                    }
+    
+                    .btn-deletar {
+                        color: $corVermelhoClaro;
+                        display: none;
+                    }
 
-        .comment {
-            font-size: 14px;
-            color: $corTexto;
+                    .btn-editar {
+                        display: none;
+                    }
+                }
+            }
+    
+            .comment {
+                font-size: 14px;
+                color: $corTexto;
+    
+                .username {
+                    color: $corRoxo;
+                }
+            }
+        }
+    
+    }
+
+    .secondary-comment {
+        display: flex;
+    
+        .linha {
+            width: 5px;
+            margin: 10px 40px;
+            background-color: #ddd;
         }
     }
 
-}
-
-.wrapper-reply-comment {
-    // display: none;
 }

@@ -17,20 +17,45 @@ body {
 
 .page {
   max-width: 800px;
-  margin-bottom: 40px;
+  width: 800px;
+  height: 100vh;
   position: relative;
-  border: solid 1px red;
+}
+
+.page .wrapper-box-bottom {
+  position: fixed;
+  max-width: 800px;
+  min-width: 400px;
+  width: 100%;
+  padding: 10px;
+  height: 200px;
+  bottom: 0px;
+  background-color: #f5f6fa;
+}
+
+.page .wrapper-box-top {
+  position: fixed;
+  padding: 20px 10px;
+  max-width: 800px;
+  min-width: 400px;
+  width: 100%;
+  height: calc(100vh - 200px);
+  top: 0;
+  overflow-y: scroll;
 }
 
 .wrapper-send-comment {
   background-color: #fff;
   border-radius: 8px;
   padding: 20px;
-  margin: 20px 0px;
-  display: grid;
+  display: none;
   grid-template-columns: 40px 1fr 90px;
   align-items: flex-start;
   gap: 20px;
+}
+
+.wrapper-send-comment.fixo, .wrapper-send-comment.active {
+  display: grid;
 }
 
 .wrapper-send-comment .avatar {
@@ -76,16 +101,29 @@ body {
   opacity: 50%;
 }
 
-.wrapper-comment {
+.wrapper-comment .main-comment {
   background-color: #fff;
   border-radius: 8px;
   padding: 20px;
+  margin: 15px 0px;
   display: flex;
   gap: 20px;
 }
 
-.wrapper-comment .controler {
-  width: 80px;
+.wrapper-comment .main-comment.user-atual .you {
+  display: inline-flex !important;
+}
+
+.wrapper-comment .main-comment.user-atual .btn-deletar, .wrapper-comment .main-comment.user-atual .btn-editar {
+  display: flex !important;
+}
+
+.wrapper-comment .main-comment.user-atual .btn-responder {
+  display: none !important;
+}
+
+.wrapper-comment .main-comment .controler {
+  min-width: 35px;
   height: 80px;
   background-color: #f5f6fa;
   border-radius: 5px;
@@ -98,23 +136,23 @@ body {
   font-weight: 500;
 }
 
-.wrapper-comment .controler .btn-controler {
+.wrapper-comment .main-comment .controler .btn-controler {
   background: none;
   border: none;
   cursor: pointer;
 }
 
-.wrapper-comment .controler .btn-controler:hover > img {
+.wrapper-comment .main-comment .controler .btn-controler:hover > img {
   filter: invert(75%);
 }
 
-.wrapper-comment .content-comment .topo {
+.wrapper-comment .main-comment .content-comment .topo {
   display: flex;
   justify-content: space-between;
   margin-bottom: 15px;
 }
 
-.wrapper-comment .content-comment .topo .dados-user {
+.wrapper-comment .main-comment .content-comment .topo .dados-user {
   display: flex;
   gap: 15px;
   justify-content: space-around;
@@ -122,7 +160,7 @@ body {
   font-size: 15px;
 }
 
-.wrapper-comment .content-comment .topo .dados-user .avatar {
+.wrapper-comment .main-comment .content-comment .topo .dados-user .avatar {
   width: 30px;
   height: 30px;
   font-size: small;
@@ -133,7 +171,30 @@ body {
   align-items: center;
 }
 
-.wrapper-comment .content-comment .topo .btn-responder {
+.wrapper-comment .main-comment .content-comment .topo .dados-user .nome {
+  font-weight: bold;
+}
+
+.wrapper-comment .main-comment .content-comment .topo .dados-user .you {
+  background-color: #5756b2;
+  height: 50%;
+  font-size: 10px;
+  padding: 2px 5px;
+  color: #fff;
+  display: none;
+  align-items: center;
+}
+
+.wrapper-comment .main-comment .content-comment .topo .dados-user .data {
+  color: #7b7c7e;
+}
+
+.wrapper-comment .main-comment .content-comment .topo .wrapper-botoes {
+  display: flex;
+  gap: 20px;
+}
+
+.wrapper-comment .main-comment .content-comment .topo .wrapper-botoes .btn-topo {
   background: none;
   border: none;
   color: #5756b2;
@@ -143,15 +204,38 @@ body {
   cursor: pointer;
 }
 
-.wrapper-comment .content-comment .topo .btn-responder > img {
+.wrapper-comment .main-comment .content-comment .topo .wrapper-botoes .btn-topo > img {
   height: 12px;
 }
 
-.wrapper-comment .content-comment .topo .btn-responder:hover {
+.wrapper-comment .main-comment .content-comment .topo .wrapper-botoes .btn-topo:hover {
   opacity: 50%;
 }
 
-.wrapper-comment .content-comment .comment {
+.wrapper-comment .main-comment .content-comment .topo .wrapper-botoes .btn-deletar {
+  color: #f1606a;
+  display: none;
+}
+
+.wrapper-comment .main-comment .content-comment .topo .wrapper-botoes .btn-editar {
+  display: none;
+}
+
+.wrapper-comment .main-comment .content-comment .comment {
   font-size: 14px;
   color: #7b7c7e;
+}
+
+.wrapper-comment .main-comment .content-comment .comment .username {
+  color: #5756b2;
+}
+
+.wrapper-comment .secondary-comment {
+  display: flex;
+}
+
+.wrapper-comment .secondary-comment .linha {
+  width: 5px;
+  margin: 10px 40px;
+  background-color: #ddd;
 }
