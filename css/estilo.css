@@ -80,6 +80,7 @@ body {
 
 .wrapper-send-comment .set-comment:focus {
   border: solid 2px #5756b2;
+  box-shadow: 0 0 3px rgba(87, 86, 178, 0.6);
 }
 
 .wrapper-send-comment .set-comment::placeholder {
@@ -110,15 +111,15 @@ body {
   gap: 20px;
 }
 
-.wrapper-comment .main-comment.user-atual .you {
+.wrapper-comment .main-comment.currentUser .you {
   display: inline-flex !important;
 }
 
-.wrapper-comment .main-comment.user-atual .btn-deletar, .wrapper-comment .main-comment.user-atual .btn-editar {
+.wrapper-comment .main-comment.currentUser .btn-deletar, .wrapper-comment .main-comment.currentUser .btn-editar {
   display: flex !important;
 }
 
-.wrapper-comment .main-comment.user-atual .btn-responder {
+.wrapper-comment .main-comment.currentUser .btn-responder {
   display: none !important;
 }
 

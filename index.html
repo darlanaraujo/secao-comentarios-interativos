@@ -28,43 +28,18 @@
 
             <div class="wrapper-comment">
                 <!-- Comentário primário -->
-                <div class="main-comment" id="um">
+                <div class="main-comment comments">
                     <div class="controler">
                         <button class="btn-controler btn-mais"><img src="images/icon-plus.svg" alt="[Ícone Mais]"></button>
-                        <span class="nota">1</span>
+                        <span class="nota js-score">1</span>
                         <button class="btn-controler btn-menos"><img src="images/icon-minus.svg" alt="[Ícone Menos]"></button>
                     </div>
                     <div class="content-comment">
                         <div class="topo">
                             <div class="dados-user">
-                                <img class="avatar" src="" alt="">
-                                <span class="nome">nome</span>
-                                <span class="data">data</span>
-                            </div>
-                            <div class="wrapper-botoes">
-                                <button class="btn-topo btn-responder"><img src="images/icon-reply.svg" alt="[Ícone Responder]">Reply</button>
-                            </div>
-                        </div>
-        
-                        <div class="comment">
-                            <p class="texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, fugiat iusto? Tenetur reiciendis aliquid id, qui praesentium, architecto quas nulla in possimus earum ipsum odit, atque nemo nam placeat perferendis.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Comentário primário -->
-                <div class="main-comment">
-                    <div class="controler">
-                        <button class="btn-controler btn-mais"><img src="images/icon-plus.svg" alt="[Ícone Mais]"></button>
-                        <span class="nota">12</span>
-                        <button class="btn-controler btn-menos"><img src="images/icon-minus.svg" alt="[Ícone Menos]"></button>
-                    </div>
-                    <div class="content-comment">
-                        <div class="topo">
-                            <div class="dados-user">
-                                <img class="avatar" src="" alt="">
-                                <span class="nome">nome</span>
-                                <span class="data">data</span>
+                                <img class="avatar js-image" src="" alt="">
+                                <span class="nome js-username">nome</span>
+                                <span class="data js-createdAt">data</span>
                             </div>
                             <div class="wrapper-botoes">
                                 <button class="btn-topo btn-responder"><img src="images/icon-reply.svg" alt="[Ícone Responder]">Reply</button>
@@ -74,14 +49,41 @@
                         </div>
         
                         <div class="comment">
-                            <p class="texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, fugiat iusto? Tenetur reiciendis aliquid id, qui praesentium, architecto quas nulla in possimus earum ipsum odit, atque nemo nam placeat perferendis.</p>
+                            <p class="texto js-comment">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, fugiat iusto? Tenetur reiciendis aliquid id, qui praesentium, architecto quas nulla in possimus earum ipsum odit, atque nemo nam placeat perferendis.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Comentário primário -->
+                <div class="main-comment comments">
+                    <div class="controler">
+                        <button class="btn-controler btn-mais"><img src="images/icon-plus.svg" alt="[Ícone Mais]"></button>
+                        <span class="nota js-score">12</span>
+                        <button class="btn-controler btn-menos"><img src="images/icon-minus.svg" alt="[Ícone Menos]"></button>
+                    </div>
+                    <div class="content-comment">
+                        <div class="topo">
+                            <div class="dados-user">
+                                <img class="avatar js-image" src="" alt="">
+                                <span class="nome js-username">nome</span>
+                                <span class="data js-createdAt">data</span>
+                            </div>
+                            <div class="wrapper-botoes">
+                                <button class="btn-topo btn-responder"><img src="images/icon-reply.svg" alt="[Ícone Responder]">Reply</button>
+                                <button class="btn-topo btn-deletar"><img src="images/icon-delete.svg" alt="[Ícone Deletar]">Delete</button>
+                                <button class="btn-topo btn-editar"><img src="images/icon-edit.svg" alt="[Ícone Editar]">Edit</button>
+                            </div>
+                        </div>
+        
+                        <div class="comment">
+                            <p class="texto js-comment">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, fugiat iusto? Tenetur reiciendis aliquid id, qui praesentium, architecto quas nulla in possimus earum ipsum odit, atque nemo nam placeat perferendis.</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Fazer um comentário secundário -->
-                <div class="wrapper-send-comment active">
-                    <img class="avatar foto-usuario-atual" src="" alt="">
+                <div class="wrapper-send-comment currentUser active">
+                    <img class="avatar js-image" src="" alt="">
                     <textarea class="set-comment" name="" id="" cols="30" rows="4" placeholder="Add a comment..."></textarea>
                     <button class="btn-responder">reply</button>
                 </div>
@@ -91,19 +93,19 @@
                     <div class="linha"></div>
                     <div class="replice">
                         <!-- Comentários -->
-                        <div class="main-comment">
+                        <div class="main-comment replices">
                             <div class="controler">
                                 <button class="btn-controler btn-mais"><img src="images/icon-plus.svg" alt="[Ícone Mais]"></button>
-                                <span class="nota">12</span>
+                                <span class="nota js-score">12</span>
                                 <button class="btn-controler btn-menos"><img src="images/icon-minus.svg" alt="[Ícone Menos]"></button>
                             </div>
                             <div class="content-comment">
                                 <div class="topo">
                                     <div class="dados-user">
-                                        <img class="avatar" src="" alt="">
-                                        <span class="nome">nome</span>
+                                        <img class="avatar js-image" src="" alt="">
+                                        <span class="nome js-username">nome</span>
                                         <span class="you">you</span>
-                                        <span class="data">data</span>
+                                        <span class="data js-createdAt">data</span>
                                     </div>
                                     <div class="wrapper-botoes">
                                         <button class="btn-topo btn-responder"><img src="images/icon-reply.svg" alt="[Ícone Responder]">Reply</button>
@@ -113,24 +115,24 @@
                                 </div>
                 
                                 <div class="comment">
-                                    <p class="texto"> <span class="username">@nome</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, fugiat iusto? Tenetur reiciendis aliquid id, qui praesentium, architecto quas nulla in possimus earum ipsum odit, atque nemo nam placeat perferendis.</p>
+                                    <p class="texto js-comment"> <span class="username js-replyngto">@nome</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, fugiat iusto? Tenetur reiciendis aliquid id, qui praesentium, architecto quas nulla in possimus earum ipsum odit, atque nemo nam placeat perferendis.</p>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="main-comment user-atual">
+                        <div class="main-comment currentUser replices">
                             <div class="controler">
                                 <button class="btn-controler btn-mais"><img src="images/icon-plus.svg" alt="[Ícone Mais]"></button>
-                                <span class="nota">12</span>
+                                <span class="nota js-score">12</span>
                                 <button class="btn-controler btn-menos"><img src="images/icon-minus.svg" alt="[Ícone Menos]"></button>
                             </div>
                             <div class="content-comment">
                                 <div class="topo">
                                     <div class="dados-user">
-                                        <img class="avatar foto-usuario-atual" src="" alt="">
-                                        <span class="nome nome-usuario-atual">nome</span>
+                                        <img class="avatar js-image" src="" alt="">
+                                        <span class="nome js-username">nome</span>
                                         <span class="you">you</span>
-                                        <span class="data">data</span>
+                                        <span class="data js-createdAt">data</span>
                                     </div>
                                     <div class="wrapper-botoes">
                                         <button class="btn-topo btn-responder"><img src="images/icon-reply.svg" alt="[Ícone Responder]">Reply</button>
@@ -140,7 +142,7 @@
                                 </div>
                 
                                 <div class="comment">
-                                    <p class="texto"> <span class="username">@nome</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, fugiat iusto? Tenetur reiciendis aliquid id, qui praesentium, architecto quas nulla in possimus earum ipsum odit, atque nemo nam placeat perferendis.</p>
+                                    <p class="texto js-comment"> <span class="username js-replyngto">@nome</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, fugiat iusto? Tenetur reiciendis aliquid id, qui praesentium, architecto quas nulla in possimus earum ipsum odit, atque nemo nam placeat perferendis.</p>
                                 </div>
                             </div>
                         </div>
@@ -155,8 +157,8 @@
         <div class="wrapper-box-bottom">
 
             <!-- Box fixo - Fazer comentário -->
-            <div class="wrapper-send-comment fixo">
-                <img class="avatar foto-usuario-atual" src="" alt="">
+            <div class="wrapper-send-comment fixo currentUser">
+                <img class="avatar js-image" src="" alt="">
                 <textarea class="set-comment" name="" id="" cols="30" rows="4" required="required" placeholder="Add a comment..."></textarea>
                 <button class="btn-responder">send</button>
             </div>

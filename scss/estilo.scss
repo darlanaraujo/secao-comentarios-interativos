@@ -82,6 +82,7 @@ body {
 
         &:focus {
             border: solid 2px rgb(87, 86, 178);
+            box-shadow: 0 0 3px rgba($corRoxo, .60);
         }
 
         &::placeholder {
@@ -115,7 +116,7 @@ body {
         display: flex;
         gap: 20px;
 
-        &.user-atual {
+        &.currentUser {
             .you {
                 display: inline-flex !important;
             }
