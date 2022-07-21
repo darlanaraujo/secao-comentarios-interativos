@@ -4,8 +4,10 @@ const avatares = document.querySelectorAll('.avatar');
 const datas = document.querySelectorAll('.data');
 const textos = document.querySelectorAll('.texto');
 
-const nomeUsuarioAtual = document.querySelector('.nome-usuario-atual');
-const fotoUsuarioAtual = document.querySelector('.foto-usuario-atual');
+const primeiro = document.querySelector('#um');
+
+const nomeUsuarioAtual = document.querySelectorAll('.nome-usuario-atual');
+const fotoUsuarioAtual = document.querySelectorAll('.foto-usuario-atual');
 
 
 
@@ -81,11 +83,16 @@ let jsonDados = [
 ];
 
 jsonDados.forEach((item) => {
-    // nomeUsuarioAtual.innerHTML = item.currentUser.username;
-    fotoUsuarioAtual.img = item.currentUser.image.png;
-    console.log(item.currentUser.image.png);
+  nomeUsuarioAtual.forEach((nome, index) =>{
+    nome.innerHTML = item.currentUser.username;
+  });
+
+  primeiro.getElementsByClassName('nota')[0].innerHTML = item.comments[0].score;
+  primeiro.getElementsByClassName('nome')[0].innerHTML = item.comments[0].user.username;
+  primeiro.getElementsByClassName('data')[0].innerHTML = item.comments[0].createdAt;
+  primeiro.getElementsByTagName('img')[2].src = item.comments[0].user.image.png;
 });
 
 
 
-console.log(jsonDados);
+console.log(primeiro.getElementsByTagName('img')[2]);
