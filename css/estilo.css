@@ -102,13 +102,28 @@ body {
   opacity: 50%;
 }
 
+.wrapper-comment {
+  display: none;
+}
+
+.wrapper-comment.active {
+  display: block;
+}
+
 .wrapper-comment .main-comment {
   background-color: #fff;
   border-radius: 8px;
   padding: 20px;
   margin: 15px 0px;
-  display: flex;
+  display: none;
+  float: right;
   gap: 20px;
+  min-width: 500px;
+}
+
+.wrapper-comment .main-comment.active {
+  display: grid;
+  grid-template-columns: 35px 1fr;
 }
 
 .wrapper-comment .main-comment.currentUser .you {
@@ -232,11 +247,13 @@ body {
 }
 
 .wrapper-comment .secondary-comment {
-  display: flex;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 100px 1fr;
 }
 
 .wrapper-comment .secondary-comment .linha {
-  width: 5px;
+  width: 2px;
   margin: 10px 40px;
   background-color: #ddd;
 }

@@ -107,14 +107,27 @@ body {
 }
 
 .wrapper-comment {
+    display: none;
+
+    &.active {
+        display: block;
+    }
     
     .main-comment {
         background-color: #fff;
         border-radius: 8px;
         padding: 20px;
         margin: 15px 0px;
-        display: flex;
+        display: none;
+        
+        float: right;
         gap: 20px;
+        min-width: 500px;
+
+        &.active {
+            display: grid;
+            grid-template-columns: 35px 1fr;
+        }
 
         &.currentUser {
             .you {
@@ -246,10 +259,12 @@ body {
     }
 
     .secondary-comment {
-        display: flex;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 100px 1fr;
     
         .linha {
-            width: 5px;
+            width: 2px;
             margin: 10px 40px;
             background-color: #ddd;
         }
