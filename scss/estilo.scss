@@ -1,5 +1,13 @@
 @import 'padroes';
 
+// Estilos Padrões
+$corFundo: rgb(245, 246, 250);
+$corRoxo: rgb(87, 86, 178);
+$corTexto: rgb(123, 124, 126);
+$corVermelhoClaro: rgb(241, 96, 106);
+$corlinhas: rgb(236, 237, 240);
+
+// Definições Globais
 * {
     margin: 0;
     padding: 0;
@@ -8,89 +16,23 @@
     text-decoration: none;
 }
 
+// Estilo Projeto
 body {
     width: 100%;
     height: 100vh;
+    background-color: $corFundo;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
-    background: $corFundo;
+    align-items: center;
+
 }
 
 .page {
-    max-width: 800px;
-    width: 800px;
-    height: 100vh;
-    position: relative;
+    width: 700px;
+    height: 100%;
+    border: solid 1px red;
 
-    .wrapper-box-bottom {
-        position: fixed;
-        max-width: 800px;
-        min-width: 400px;
-        width: 100%;
-        padding: 10px;
-        height: 200px;
-        bottom: 0px;
-        background-color: $corFundo;
-    }
-
-    .wrapper-box-top {
-        position: fixed;
-        padding: 20px 10px;
-        max-width: 800px;
-        min-width: 400px;
-        width: 100%;
-        height: calc(100vh - 200px);
-        top: 0;
-        overflow-y: scroll;
-
-    }
-}
-
-.wrapper-send-comment {
-    background-color: #fff;
-    border-radius: 8px;
-    padding: 20px;
-    // display: grid;
-    display: none;
-    grid-template-columns: 40px 1fr 90px;
-    align-items: flex-start;
-    gap: 20px;
-
-    &.fixo, &.active {
-        display: grid;
-    }
-
-    .avatar {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background-color: #ddd;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .set-comment {
-        background-color: none;
-        border: solid 2px rgb(247, 247, 247);
-        border-radius: 8px;
-        resize: none;
-        padding: 10px 20px;
-        cursor: pointer;
-        outline: none;
-
-        &:focus {
-            border: solid 2px rgb(87, 86, 178);
-            box-shadow: 0 0 3px rgba($corRoxo, .60);
-        }
-
-        &::placeholder {
-            font-size: 14px;
-        }
-    }
-
-    .btn-responder {
+    .btn-primario {
         width: 90px;
         height: 40px;
         background-color: $corRoxo;
@@ -104,170 +46,138 @@ body {
             opacity: 50%;
         }
     }
+
+    .btn-secundario {
+        background: none;
+        border: none;
+        color: $corRoxo;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        cursor: pointer;
+
+        & > img {
+            height: 12px;
+        }
+
+        &:hover {
+            opacity: 50%;
+        }
+    }
 }
 
-.wrapper-comment {
-    display: none;
+.caixa-comentarios {
+    display: grid;
+    grid-template-columns: 35px 1fr;
+    gap: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 10px 0px;
 
-    &.active {
-        display: block;
-    }
-    
-    .main-comment {
-        background-color: #fff;
-        border-radius: 8px;
-        padding: 20px;
-        margin: 15px 0px;
-        display: none;
-        
-        float: right;
-        gap: 20px;
-        min-width: 500px;
-
-        &.active {
-            display: grid;
-            grid-template-columns: 35px 1fr;
-        }
-
-        &.currentUser {
-            .you {
-                display: inline-flex !important;
-            }
-
-            .btn-deletar, .btn-editar {
-                display: flex !important;
-            }
-
-            .btn-responder {
-                display: none !important;
-            }
-        }
-    
-        .controler {
-            min-width: 35px;
-            height: 80px;
-            background-color: $corFundo;
-            border-radius: 5px;
-            display: grid;
-            grid-template-rows: auto;
-            justify-content: center;
-            align-items: center;
-            color: $corRoxo;
-            font-size: 14px;
-            font-weight: 500;
-    
-            
-            .btn-controler {
-                background: none;
-                border: none;
-                cursor: pointer;
-    
-                &:hover > img {
-                    filter: invert(75%);
-                }
-            }
-        }
-    
-        .content-comment {
-            // border: solid 1px red;
-            
-            .topo {
-                display: flex;
-                justify-content: space-between;
-                margin-bottom: 15px;
-        
-                .dados-user {
-                    display: flex;
-                    gap: 15px;
-                    justify-content: space-around;
-                    align-items: center;
-                    font-size: 15px;
-    
-                    .avatar {
-                        width: 30px;
-                        height: 30px;
-                        font-size: small;
-                        border-radius: 50%;
-                        background-color: #ddd;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                    }
-    
-                    .nome {
-                        font-weight: bold;
-                    }
-    
-                    .you {
-                        background-color: $corRoxo;
-                        height: 50%;
-                        font-size: 10px;
-                        padding: 2px 5px;
-                        color: #fff;
-                        display: none;
-                        align-items: center;
-                    }
-    
-                    .data {
-                        color: $corTexto;
-                    }
-                }
-    
-                .wrapper-botoes {
-                    display: flex;
-                    gap: 20px;
-    
-                    .btn-topo {
-                        background: none;
-                        border: none;
-                        color: $corRoxo;
-                        display: flex;
-                        align-items: center;
-                        gap: 5px;
-                        cursor: pointer;
-        
-                        & > img {
-                            height: 12px;
-                        }
-        
-                        &:hover {
-                            opacity: 50%;
-                        }
-                    }
-    
-                    .btn-deletar {
-                        color: $corVermelhoClaro;
-                        display: none;
-                    }
-
-                    .btn-editar {
-                        display: none;
-                    }
-                }
-            }
-    
-            .comment {
-                font-size: 14px;
-                color: $corTexto;
-    
-                .username {
-                    color: $corRoxo;
-                }
-            }
-        }
-    
-    }
-
-    .secondary-comment {
-        width: 100%;
+    .controles {
+        min-width: 35px;
+        height: 80px;
+        background-color: $corFundo;
+        border-radius: 5px;
         display: grid;
-        grid-template-columns: 100px 1fr;
-    
-        .linha {
-            width: 2px;
-            margin: 10px 40px;
-            background-color: #ddd;
+        grid-template-rows: auto;
+        justify-content: center;
+        align-items: center;
+        color: $corRoxo;
+        font-size: 14px;
+        font-weight: 500;
+
+        .btn-controles {
+            background: none;
+            border: none;
+            cursor: pointer;
+
+            &:hover > img {
+                filter: invert(75%);
+            }
         }
     }
 
+    .topo-comentario {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+
+        .dados-usuario {
+            display: flex;
+            gap: 15px;
+            justify-content: space-around;
+            align-items: center;
+            font-size: 15px;
+
+            .foto {
+                width: 30px;
+                height: 30px;
+                background-color: #ddd;
+                border-radius: 50%;
+            }
+
+            .nome-usuario {
+                font-weight: bold;
+            }
+
+            .data-comentario {
+                color: $corTexto;
+            }
+        }
+
+        .caixa-botoes {
+            display: flex;
+            gap: 20px;
+        }
+    }
+
+    .comentario {
+        font-size: 16px;
+        color: $corTexto;
+        line-height: 1.5;
+    }
+}
+
+.caixa-fazer-comentarios {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 40px 1fr 100px;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 10px 0px;
+
+    .foto {
+        width: 40px;
+        height: 40px;
+        background-color: #ddd;
+        border-radius: 50%;
+    }
+
+    .caixa-texto {
+        background-color: none;
+        border: solid 1px rgb(228, 228, 228);
+        border-radius: 8px;
+        resize: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        outline: none;
+
+        &:focus {
+            border: solid 1px rgb(87, 86, 178);
+            box-shadow: 0 0 3px rgba($corRoxo, .60);
+        }
+
+        &::placeholder {
+            font-size: 14px;
+        }
+    }
+
+    .btn-enviar {
+        // btn-padrao
+    }
 }
