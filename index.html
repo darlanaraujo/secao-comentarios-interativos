@@ -28,27 +28,182 @@
 <body>
     <section class="page">
 
-        <div class="comments">
+        <div class="caixa-comments" id="caixa-comments">
             <div class="caixa-comentarios">
-                <div class="controles">
-                    <button class="btn-controles" id="btn-mais"><img src="images/icon-plus.svg" alt=""></button>
-                    <span class="score" id="score">12</span>
-                    <button class="btn-controles" id="btn-menos"><img src="images/icon-minus.svg" alt=""></button>
-                </div>
+                <!-- Comentário do usuário -->
+                <div class="wrapper-comentario">
+                    <div class="controles">
+                        <button class="btn-controles" id="btn-mais"><img src="images/icon-plus.svg" alt=""></button>
+                        <span class="score" id="score">12</span>
+                        <button class="btn-controles" id="btn-menos"><img src="images/icon-minus.svg" alt=""></button>
+                    </div>
 
-                <div>
-                    <div class="topo-comentario">
-                        <div class="dados-usuario">
-                            <img class="foto" src="" alt="">
-                            <span class="nome-usuario">nome</span>
-                            <span class="data-comentario">data</span>
+                    <div>
+                        <div class="topo-comentario">
+                            <div class="dados-usuario">
+                                <img class="foto" src="" alt="">
+                                <span class="nome-usuario">nome</span>
+                                <span class="data-comentario">data</span>
+                            </div>
+                            <div class="caixa-botoes">
+                                <button class="btn-secundario" id="btn-resposta"><img src="images/icon-reply.svg" alt="">reply</button>
+                            </div>
                         </div>
-                        <div class="caixa-botoes">
-                            <button class="btn-secundario"><img src="images/icon-reply.svg" alt="">reply</button>
+                        <div>
+                            <p class="comentario">Impressive! Though it seems the drag feature could be improved. But
+                                overall it looks incredible. You've nailed the design and the responsiveness at various
+                                breakpoints works really well.</p>
                         </div>
                     </div>
+                </div>
+
+                <!-- Contorno das Respostas -->
+                <div class="caixa-replies" id="caixa-replies">
+                    <div class="linha"></div>
+                    <!-- Respostas -->
+                    <div class="caixa-respostas">
+                        <!-- Resposta de um comentário -->
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="caixa-comentarios">
+                <!-- Comentário do usuário -->
+                <div class="wrapper-comentario-usuario">
+                    <div class="controles">
+                        <button class="btn-controles" id="btn-mais"><img src="images/icon-plus.svg" alt=""></button>
+                        <span class="score" id="score">0</span>
+                        <button class="btn-controles" id="btn-menos"><img src="images/icon-minus.svg" alt=""></button>
+                    </div>
+
                     <div>
-                        <p class="comentario">Impressive! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.</p>
+                        <div class="topo-comentario">
+                            <div class="dados-usuario">
+                                <img class="foto" src="images/avatars/image-juliusomo.png" alt="">
+                                <span class="nome-usuario">nome</span>
+                                <span class="selo">you</span>
+                                <span class="data-comentario">today</span>
+                            </div>
+                            <div class="caixa-botoes">
+                                <button class="btn-secundario btn-deletar" id="btn-deletar"><img src="images/icon-delete.svg" alt="">Delete</button>
+                                <button class="btn-secundario" id="btn-editar"><img src="images/icon-edit.svg" alt="">Edit</button>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="comentario">Impressive! Though it seems the drag feature could be improved. But
+                                overall it looks incredible. You've nailed the design and the responsiveness at various
+                                breakpoints works really well.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contorno das Respostas -->
+                <div class="caixa-replies" id="caixa-replies">
+                    <div class="linha"></div>
+                    <!-- Respostas -->
+                    <div class="caixa-respostas">
+                        <!-- Resposta de um comentário -->
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="caixa-comentarios">
+                <!-- Comentário do usuário -->
+                <div class="wrapper-comentario">
+                    <div class="controles">
+                        <button class="btn-controles" id="btn-mais"><img src="images/icon-plus.svg" alt=""></button>
+                        <span class="score" id="score">12</span>
+                        <button class="btn-controles" id="btn-menos"><img src="images/icon-minus.svg" alt=""></button>
+                    </div>
+
+                    <div>
+                        <div class="topo-comentario">
+                            <div class="dados-usuario">
+                                <img class="foto" src="" alt="">
+                                <span class="nome-usuario">nome</span>
+                                <span class="data-comentario">data</span>
+                            </div>
+                            <div class="caixa-botoes">
+                                <button class="btn-secundario" id="btn-resposta"><img src="images/icon-reply.svg" alt="">reply</button>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="comentario">Impressive! Though it seems the drag feature could be improved. But
+                                overall it looks incredible. You've nailed the design and the responsiveness at various
+                                breakpoints works really well.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contorno das Respostas -->
+                <div class="caixa-replies" id="caixa-replies">
+                    <div class="linha"></div>
+                    <!-- Respostas -->
+                    <div class="caixa-respostas">
+                        <!-- Resposta de um comentário -->
+                        <div class="wrapper-resposta">
+                            <div class="controles">
+                                <button class="btn-controles" id="btn-mais"><img src="images/icon-plus.svg"
+                                        alt=""></button>
+                                <span class="score" id="score">12</span>
+                                <button class="btn-controles" id="btn-menos"><img src="images/icon-minus.svg"
+                                        alt=""></button>
+                            </div>
+
+                            <div>
+                                <div class="topo-comentario">
+                                    <div class="dados-usuario">
+                                        <img class="foto" src="" alt="">
+                                        <span class="nome-usuario">nome</span>
+                                        <span class="data-comentario">data</span>
+                                    </div>
+                                    <div class="caixa-botoes">
+                                        <button class="btn-secundario" id="btn-resposta"><img src="images/icon-reply.svg" alt="">reply</button>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="comentario"><span class="respondendo">@nome</span> Impressive! Though it
+                                        seems the drag feature could be improved. But overall it looks incredible.
+                                        You've nailed the design and the responsiveness at various breakpoints works
+                                        really well.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="wrapper-resposta-usuario">
+                            <div class="controles">
+                                <button class="btn-controles" id="btn-mais"><img src="images/icon-plus.svg"
+                                        alt=""></button>
+                                <span class="score" id="score">12</span>
+                                <button class="btn-controles" id="btn-menos"><img src="images/icon-minus.svg"
+                                        alt=""></button>
+                            </div>
+
+                            <div>
+                                <div class="topo-comentario">
+                                    <div class="dados-usuario">
+                                        <img class="foto" src="" alt="">
+                                        <span class="nome-usuario">nome</span>
+                                        <span class="selo">you</span>
+                                        <span class="data-comentario">data</span>
+                                    </div>
+                                    <div class="caixa-botoes">
+                                        <button class="btn-secundario btn-deletar"><img src="images/icon-delete.svg"
+                                                alt="">Delete</button>
+                                        <button class="btn-secundario"><img src="images/icon-edit.svg"
+                                                alt="">Edit</button>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="comentario"> <span class="respondendo">@nome</span> Impressive! Though it
+                                        seems the drag feature could be improved. But overall it looks incredible.
+                                        You've nailed the design and the responsiveness at various breakpoints works
+                                        really well.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -57,9 +212,9 @@
 
         <!-- Caixa de comentário fixa -->
         <div class="caixa-fazer-comentarios" id="currentUser">
-            <img class="foto" id="image" src="" alt="">
-            <textarea class="caixa-texto" name="" id="" cols="30" rows="4" required="required"
-            placeholder="Add a comment..."></textarea>
+            <img class="foto" id="image" src="images/avatars/image-juliusomo.png" alt="">
+            <textarea class="caixa-texto" name="" id="caixa-texto" cols="30" rows="4" required="required"
+                placeholder="Add a comment..."></textarea>
             <button class="btn-primario" id="btn-enviar">send</button>
         </div>
     </section>

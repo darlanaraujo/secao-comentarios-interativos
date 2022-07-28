@@ -23,14 +23,13 @@ body {
     background-color: $corFundo;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
 
 }
 
 .page {
-    width: 700px;
-    height: 100%;
-    border: solid 1px red;
+    width: 800px;
+    height: 100vh;
 
     .btn-primario {
         width: 90px;
@@ -56,7 +55,7 @@ body {
         gap: 5px;
         cursor: pointer;
 
-        & > img {
+        &>img {
             height: 12px;
         }
 
@@ -66,7 +65,42 @@ body {
     }
 }
 
-.caixa-comentarios {
+.caixa-comments {
+    width: 100%;
+    max-height: calc(100vh - 170px);
+    overflow-y: scroll;
+    padding: 0px 15px;
+
+    .caixa-comentarios {
+        float: right;
+
+        .wrapper-comentario,
+        .wrapper-comentario-usuario {
+            min-width: 770px !important;
+        }
+
+        .caixa-replies {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 100px 1fr;
+
+            .linha {
+                width: 2px;
+                margin: 10px 40px;
+                background-color: #ddd;
+            }
+        }
+    }
+}
+
+
+
+
+.wrapper-comentario,
+.wrapper-comentario-usuario,
+.wrapper-resposta,
+.wrapper-resposta-usuario {
+    min-width: 100%;
     display: grid;
     grid-template-columns: 35px 1fr;
     gap: 20px;
@@ -77,7 +111,7 @@ body {
 
     .controles {
         min-width: 35px;
-        height: 80px;
+        height: 95px;
         background-color: $corFundo;
         border-radius: 5px;
         display: grid;
@@ -93,7 +127,7 @@ body {
             border: none;
             cursor: pointer;
 
-            &:hover > img {
+            &:hover>img {
                 filter: invert(75%);
             }
         }
@@ -122,6 +156,15 @@ body {
                 font-weight: bold;
             }
 
+            .selo {
+                background-color: $corRoxo;
+                height: 60%;
+                font-size: 10px;
+                padding: 2px 5px;
+                color: #fff;
+                align-items: center;
+            }
+
             .data-comentario {
                 color: $corTexto;
             }
@@ -130,6 +173,10 @@ body {
         .caixa-botoes {
             display: flex;
             gap: 20px;
+
+            .btn-deletar {
+                color: $corVermelhoClaro;
+            }
         }
     }
 
@@ -137,11 +184,16 @@ body {
         font-size: 16px;
         color: $corTexto;
         line-height: 1.5;
+
+        .respondendo {
+            color: $corRoxo;
+        }
     }
 }
 
 .caixa-fazer-comentarios {
     width: 100%;
+    min-width: 770px;
     display: grid;
     grid-template-columns: 40px 1fr 100px;
     align-items: flex-start;

@@ -12,13 +12,12 @@ body {
   background-color: #f5f6fa;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .page {
-  width: 700px;
-  height: 100%;
-  border: solid 1px red;
+  width: 800px;
+  height: 100vh;
 }
 
 .page .btn-primario {
@@ -54,7 +53,39 @@ body {
   opacity: 50%;
 }
 
-.caixa-comentarios {
+.caixa-comments {
+  width: 100%;
+  max-height: calc(100vh - 170px);
+  overflow-y: scroll;
+  padding: 0px 15px;
+}
+
+.caixa-comments .caixa-comentarios {
+  float: right;
+}
+
+.caixa-comments .caixa-comentarios .wrapper-comentario,
+.caixa-comments .caixa-comentarios .wrapper-comentario-usuario {
+  min-width: 770px !important;
+}
+
+.caixa-comments .caixa-comentarios .caixa-replies {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 100px 1fr;
+}
+
+.caixa-comments .caixa-comentarios .caixa-replies .linha {
+  width: 2px;
+  margin: 10px 40px;
+  background-color: #ddd;
+}
+
+.wrapper-comentario,
+.wrapper-comentario-usuario,
+.wrapper-resposta,
+.wrapper-resposta-usuario {
+  min-width: 100%;
   display: grid;
   grid-template-columns: 35px 1fr;
   gap: 20px;
@@ -64,9 +95,12 @@ body {
   margin: 10px 0px;
 }
 
-.caixa-comentarios .controles {
+.wrapper-comentario .controles,
+.wrapper-comentario-usuario .controles,
+.wrapper-resposta .controles,
+.wrapper-resposta-usuario .controles {
   min-width: 35px;
-  height: 80px;
+  height: 95px;
   background-color: #f5f6fa;
   border-radius: 5px;
   display: grid;
@@ -78,23 +112,35 @@ body {
   font-weight: 500;
 }
 
-.caixa-comentarios .controles .btn-controles {
+.wrapper-comentario .controles .btn-controles,
+.wrapper-comentario-usuario .controles .btn-controles,
+.wrapper-resposta .controles .btn-controles,
+.wrapper-resposta-usuario .controles .btn-controles {
   background: none;
   border: none;
   cursor: pointer;
 }
 
-.caixa-comentarios .controles .btn-controles:hover > img {
+.wrapper-comentario .controles .btn-controles:hover > img,
+.wrapper-comentario-usuario .controles .btn-controles:hover > img,
+.wrapper-resposta .controles .btn-controles:hover > img,
+.wrapper-resposta-usuario .controles .btn-controles:hover > img {
   filter: invert(75%);
 }
 
-.caixa-comentarios .topo-comentario {
+.wrapper-comentario .topo-comentario,
+.wrapper-comentario-usuario .topo-comentario,
+.wrapper-resposta .topo-comentario,
+.wrapper-resposta-usuario .topo-comentario {
   display: flex;
   justify-content: space-between;
   margin-bottom: 15px;
 }
 
-.caixa-comentarios .topo-comentario .dados-usuario {
+.wrapper-comentario .topo-comentario .dados-usuario,
+.wrapper-comentario-usuario .topo-comentario .dados-usuario,
+.wrapper-resposta .topo-comentario .dados-usuario,
+.wrapper-resposta-usuario .topo-comentario .dados-usuario {
   display: flex;
   gap: 15px;
   justify-content: space-around;
@@ -102,34 +148,76 @@ body {
   font-size: 15px;
 }
 
-.caixa-comentarios .topo-comentario .dados-usuario .foto {
+.wrapper-comentario .topo-comentario .dados-usuario .foto,
+.wrapper-comentario-usuario .topo-comentario .dados-usuario .foto,
+.wrapper-resposta .topo-comentario .dados-usuario .foto,
+.wrapper-resposta-usuario .topo-comentario .dados-usuario .foto {
   width: 30px;
   height: 30px;
   background-color: #ddd;
   border-radius: 50%;
 }
 
-.caixa-comentarios .topo-comentario .dados-usuario .nome-usuario {
+.wrapper-comentario .topo-comentario .dados-usuario .nome-usuario,
+.wrapper-comentario-usuario .topo-comentario .dados-usuario .nome-usuario,
+.wrapper-resposta .topo-comentario .dados-usuario .nome-usuario,
+.wrapper-resposta-usuario .topo-comentario .dados-usuario .nome-usuario {
   font-weight: bold;
 }
 
-.caixa-comentarios .topo-comentario .dados-usuario .data-comentario {
+.wrapper-comentario .topo-comentario .dados-usuario .selo,
+.wrapper-comentario-usuario .topo-comentario .dados-usuario .selo,
+.wrapper-resposta .topo-comentario .dados-usuario .selo,
+.wrapper-resposta-usuario .topo-comentario .dados-usuario .selo {
+  background-color: #5756b2;
+  height: 60%;
+  font-size: 10px;
+  padding: 2px 5px;
+  color: #fff;
+  align-items: center;
+}
+
+.wrapper-comentario .topo-comentario .dados-usuario .data-comentario,
+.wrapper-comentario-usuario .topo-comentario .dados-usuario .data-comentario,
+.wrapper-resposta .topo-comentario .dados-usuario .data-comentario,
+.wrapper-resposta-usuario .topo-comentario .dados-usuario .data-comentario {
   color: #7b7c7e;
 }
 
-.caixa-comentarios .topo-comentario .caixa-botoes {
+.wrapper-comentario .topo-comentario .caixa-botoes,
+.wrapper-comentario-usuario .topo-comentario .caixa-botoes,
+.wrapper-resposta .topo-comentario .caixa-botoes,
+.wrapper-resposta-usuario .topo-comentario .caixa-botoes {
   display: flex;
   gap: 20px;
 }
 
-.caixa-comentarios .comentario {
+.wrapper-comentario .topo-comentario .caixa-botoes .btn-deletar,
+.wrapper-comentario-usuario .topo-comentario .caixa-botoes .btn-deletar,
+.wrapper-resposta .topo-comentario .caixa-botoes .btn-deletar,
+.wrapper-resposta-usuario .topo-comentario .caixa-botoes .btn-deletar {
+  color: #f1606a;
+}
+
+.wrapper-comentario .comentario,
+.wrapper-comentario-usuario .comentario,
+.wrapper-resposta .comentario,
+.wrapper-resposta-usuario .comentario {
   font-size: 16px;
   color: #7b7c7e;
   line-height: 1.5;
 }
 
+.wrapper-comentario .comentario .respondendo,
+.wrapper-comentario-usuario .comentario .respondendo,
+.wrapper-resposta .comentario .respondendo,
+.wrapper-resposta-usuario .comentario .respondendo {
+  color: #5756b2;
+}
+
 .caixa-fazer-comentarios {
   width: 100%;
+  min-width: 770px;
   display: grid;
   grid-template-columns: 40px 1fr 100px;
   align-items: flex-start;
